@@ -21,7 +21,7 @@ public:
         ll ans = 0;
 
         while (l <= r) {
-            ll mid = l + (r - l) / 2;
+            ll mid = (r + l) / 2;
             if (canPlace(list, k, mid, tot)) {
                 ans = mid;
                 l = mid + 1;

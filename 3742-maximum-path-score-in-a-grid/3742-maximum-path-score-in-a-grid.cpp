@@ -38,6 +38,7 @@ public:
         m = grid.size();
         n = grid[0].size();
 
+        //안쪽에서부터 바깥쪽으로 해석
         memo.assign(m, vector<vector<int>>(n, vector<int>(k + 1, -2)));
 
         int result = solve(0, 0, k, grid);

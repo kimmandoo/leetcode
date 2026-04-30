@@ -1,4 +1,5 @@
 class Solution {
+public:
     int m, n;
     // [r][c][k]-(r, c) 위치에서 남은 비용이 k일 때 얻을 수 있는 최대 점수
     vector<vector<vector<int>>> memo; 
@@ -33,13 +34,12 @@ class Solution {
 
         return memo[r][c][k] = score + res;
     }
-public:
     int maxPathScore(vector<vector<int>>& grid, int k) {
         m = grid.size();
         n = grid[0].size();
 
         memo.assign(m, vector<vector<int>>(n, vector<int>(k + 1, -2)));
-        
+
         int result = solve(0, 0, k, grid);
 
         return (result < 0) ? -1 : result;
